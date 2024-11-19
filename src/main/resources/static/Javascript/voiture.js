@@ -34,7 +34,7 @@ const DeplacementEnBas = 25
 
 function DeplacementVehicule (){
 
-  document.body.addEventListener('keydown' , (event) => {
+  window.addEventListener('keydown' , (event) => {
     console.log(event.key)
   
     if(event.key.trim() === "z" ){
@@ -77,14 +77,3 @@ DeplacementVehicule()
 
 
 
-// function GererClick (){
-    
-//     boutonvoiture.addEventListener('click', (e) => {
-//         e.preventDefault()
-//         console.log("Bouton cliqué ")
-//     }) }
-
-//     GererClick()
-
-
-  
