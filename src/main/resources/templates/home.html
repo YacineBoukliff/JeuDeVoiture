@@ -74,17 +74,18 @@
     <div class="controls">
         <form action="/addTesla" method="post">
             <button  id="tesla-js">Ajouter une Tesla</button>
+            <input type="text" placeholder="Tester Input JS " id="input-js">
         </form>
     </div>
     
-    <div class="vehicles-list">
+    <!-- <div class="vehicles-list">
         <h2>Véhicules en jeu</h2>
         <div th:each="vehicle : ${vehicles}" class="vehicle-item">
             <img th:src="${vehicle.imageUrl}" width="30">
             <span th:text="${vehicle.type}"></span>
             <span th:text="'Vitesse: ' + ${vehicle.speed}"></span>
         </div>
-    </div>
+    </div> -->
 
     <script>
         function updateVehicles() {
@@ -95,6 +96,12 @@
 
         const boutonvoiture = document.getElementById("tesla-js")
         console.log(boutonvoiture)
+
+        const input = document.getElementById("input-js")
+        input.addEventListener('keydown', (event) => {
+
+          console.log(event.key)
+        })
 
         function GererClick (){
             
