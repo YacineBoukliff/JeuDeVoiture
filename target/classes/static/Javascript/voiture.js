@@ -2,8 +2,6 @@
 
 let Voiture = document.getElementById("voiture-js")
 console.log(Voiture)
-const PositionVoiture = Voiture.getBoundingClientRect()
-console.log(PositionVoiture)
 
 const PositionVoitureDroite = Voiture.getBoundingClientRect().right
 console.log(PositionVoitureDroite)
@@ -41,24 +39,28 @@ function DeplacementVehicule (){
   
     if(event.key.trim() === "z" ){
       const resultat = PositionVoitureHaut + DeplacementEnHaut
+      TexteErreur.classList.add("remove")
       console.log(resultat)
       console.log(` C'est bien la touche z`)
     }
     else if(event.key.trim() === "s" ){
       const resultat = PositionVoitureBas + DeplacementEnHaut
       console.log(resultat)
+      TexteErreur.classList.add("remove")
       console.log(` C'est bien la touche s`)
     }
   
     else if (event.key.trim() === "q" ){
       const resultat = PositionVoitureGauche + DeplacementEnHaut
       console.log(resultat)
+      TexteErreur.classList.add("remove")
       console.log(` C'est bien la touche q `)
     }
   
     else if (event.key.trim() === "d" ){
       const resultat = PositionVoitureDroite + DeplacementEnHaut
       console.log(resultat)
+      TexteErreur.classList.add("remove")
       console.log(` C'est bien la touche d`)
     }
     else {
