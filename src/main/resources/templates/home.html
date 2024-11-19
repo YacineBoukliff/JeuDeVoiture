@@ -73,7 +73,7 @@
     
     <div class="controls">
         <form action="/addTesla" method="post">
-            <button type="submit">Ajouter une Tesla</button>
+            <button  id="tesla-js">Ajouter une Tesla</button>
         </form>
     </div>
     
@@ -92,6 +92,18 @@
         }
         
         setInterval(updateVehicles, 50);
+
+        const boutonvoiture = document.getElementById("tesla-js")
+        console.log(boutonvoiture)
+
+        function GererClick (){
+            
+            boutonvoiture.addEventListener('click', (e) => {
+                e.preventDefault()
+                console.log("Bouton cliqué ")
+            }) }
+
+            GererClick()
     </script>
 </body>
 </html> 
