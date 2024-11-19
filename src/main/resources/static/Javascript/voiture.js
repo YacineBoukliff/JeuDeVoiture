@@ -1,41 +1,88 @@
-const boutonvoiture = document.getElementById("tesla-js")
-console.log(boutonvoiture)
 
-const input = document.getElementById("input-js")
-input.addEventListener('keydown', (event) => {
 
-  console.log(event.key)
+let Voiture = document.getElementById("voiture-js")
+console.log(Voiture)
+const PositionVoiture = Voiture.getBoundingClientRect()
+console.log(PositionVoiture)
 
-  const touches = ["z" , "q" , "s" , "d"]
+const PositionVoitureDroite = Voiture.getBoundingClientRect().right
+console.log(PositionVoitureDroite)
 
-  if (touches.includes(3)){
-    console.log(`Le tableau contient bien tout les élements du tableauc${touches}`)
-  }
+const PositionVoitureGauche = Voiture.getBoundingClientRect().left
+console.log(PositionVoitureGauche)
 
-  if(event.key.trim() === "z" ){
-    console.log(` C'est bien la touche z`)
-  }
-  else if(event.key.trim() === "s" ){
-    console.log(` C'est bien la touche s`)
-  }
+const PositionVoitureHaut = Voiture.getBoundingClientRect().top
+console.log(PositionVoitureHaut)
 
-  else if (event.key.trim() === "q" ){
-    console.log(` C'est bien la touche q `)
-  }
+const PositionVoitureBas = Voiture.getBoundingClientRect().bottom
+console.log(PositionVoitureBas)
 
-  else if (event.key.trim() === "d" ){
-    console.log(` C'est bien la touche d`)
-  }
-  else {
-    console.log("Ca bug ")
-  }
-})
 
-function GererClick (){
+const TexteErreur = document.getElementById("texte-erreur")
+console.log(TexteErreur)
+
+TexteErreur.classList.add("remove")
+const messageerreur =  " Cette Touche n'est pas disponible pour le jeu "
+
+
+const DeplacementEnHaut = 10
+
+const resultat = PositionVoitureDroite + DeplacementEnHaut
+
+const DeplacementAGauche = 15
+const DeplacementADroite = 20
+const DeplacementEnBas = 25
+
+
+function DeplacementVehicule (){
+
+  document.body.addEventListener('keydown' , (event) => {
+    console.log(event.key)
+  
+    if(event.key.trim() === "z" ){
+      const resultat = PositionVoitureHaut + DeplacementEnHaut
+      console.log(resultat)
+      console.log(` C'est bien la touche z`)
+    }
+    else if(event.key.trim() === "s" ){
+      const resultat = PositionVoitureBas + DeplacementEnHaut
+      console.log(resultat)
+      console.log(` C'est bien la touche s`)
+    }
+  
+    else if (event.key.trim() === "q" ){
+      const resultat = PositionVoitureGauche + DeplacementEnHaut
+      console.log(resultat)
+      console.log(` C'est bien la touche q `)
+    }
+  
+    else if (event.key.trim() === "d" ){
+      const resultat = PositionVoitureDroite + DeplacementEnHaut
+      console.log(resultat)
+      console.log(` C'est bien la touche d`)
+    }
+    else {
+      console.log("Ca bug ")
+      TexteErreur.classList.remove("remove")
+      TexteErreur.innerHTML = messageerreur
+    }
+  
+  })
+
+}
+
+DeplacementVehicule()
+
+
+
+// function GererClick (){
     
-    boutonvoiture.addEventListener('click', (e) => {
-        e.preventDefault()
-        console.log("Bouton cliqué ")
-    }) }
+//     boutonvoiture.addEventListener('click', (e) => {
+//         e.preventDefault()
+//         console.log("Bouton cliqué ")
+//     }) }
 
-    GererClick()
+//     GererClick()
+
+
+  

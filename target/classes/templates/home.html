@@ -57,6 +57,10 @@
             font-size: 16px;
             cursor: pointer;
         }
+
+        .remove{
+           display: none;
+        }
     </style>
 </head>
 <body>
@@ -67,9 +71,13 @@
         <div th:each="vehicle : ${vehicles}">
             <img th:src="${vehicle.imageUrl}" 
                  th:style="'left:' + ${vehicle.x} + 'px; bottom:' + ${vehicle.y} + 'px'"
-                 class="vehicle">
+                 class="vehicle" id="voiture-js">
         </div>
     </div>
+
+    <p id="texte-erreur"> Yacine </p>
+
+
     
     <div class="controls">
         <form action="/addTesla" method="post">
@@ -97,7 +105,7 @@
        
     </script>
 
-    <script src="/Javascript/voiture.js">
+    <script src="Javascript/voiture.js">
 
         
     </script>
